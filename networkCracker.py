@@ -2,6 +2,12 @@
 import os 
 import subprocess   
 from subprocess import check_call
+from scapy.all import *
+import sys, signal 
+from multiprocessing import Process
+import time
+import csv
+
 
 if os.path.exists('output.txt'):
   os.remove('output.txt')
@@ -26,15 +32,13 @@ for line in f:
     if i == 6:
       interfacemon = word
       print(interfacemon)
-order = f"airodump-ng {interfacemon} -M >> scan.txt & sleep 2; kill $!"
+order = f"airodump-ng {interfacemon} -M -w myOutput --output-format csv & sleep 10; kill $!"
 geny = os.system(order)
-#geny  = os.system("airodump-ng wlan0mon -M & sleep 20; kill $!")
-#with open("scan.txt", "w", encoding="utf-8") as filetxt:
-  #filetxt.write(geny)
-#cmd = os.system("sleep 15")
-#os.system('{} >> scan.txt'.format(order))
 
 
-
-
+with open('myOutput-01.csv', 'r') as readFile:
+	reader = csv.reader(readFile)
+	lines = list(reader)
+	print(lines)
+readFile.close()
 
