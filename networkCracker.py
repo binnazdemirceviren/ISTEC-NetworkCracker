@@ -78,3 +78,4 @@ for item in outBSSID:
 with open('output2.csv', 'w', newline='') as file:
   wr = csv.writer(file)
   wr.writerow(writer)
+  
