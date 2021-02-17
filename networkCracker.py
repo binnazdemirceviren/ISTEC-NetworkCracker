@@ -9,6 +9,9 @@ import time
 import csv
 import pandas as pd
 
+
+
+
 if os.path.exists('output.txt'):
   os.remove('output.txt')
 
@@ -35,6 +38,7 @@ for line in f:
     if i == 6:
       interfacemon = word
       print(interfacemon)
+
 
 order = f"airodump-ng {interfacemon} -M -w myOutput --output-format csv & sleep 20; kill $!"
 geny = os.system(order)
