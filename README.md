@@ -13,7 +13,7 @@
   * Öncesinde belirlediğimiz BSSID listesindeki(input.csv) ağlardan handshake yakalar.
   * Yakalanan handshakelere, belirlediğimiz wordlistler kullanılarak brute-force saldırı gerçekleştirir
   * Parolalar txt'ye yazdırır
-  * Monitor modudurdurur.
+  * Monitor modu durdurur.
 
 
   
