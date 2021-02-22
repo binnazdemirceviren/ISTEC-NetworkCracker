@@ -8,10 +8,12 @@
   Program çalıştıktan sonra otonom bir şekilde sırayla aşağıdaki işlemler gerçekleşmektedir.
   
   * Ağ kartını belirtir ve ağ kartını monitor moda alır.
-  * Monitor moda alınan ağ kartının ismi tutulur.
-  * Etraftaki ağlar taranır.
-  * Öncesinde belirlediğimiz BSSID listesindeki(input.csv) ağlardan handshake yakalanır.
-  * Yakalanan handshakelere, belirlediğimiz wordlistler kullanılarak brute-force saldırı gerçekleştirilir.
+  * Monitor moda alınan ağ kartının ismi tutar.
+  * Etraftaki ağlar tarar.
+  * Öncesinde belirlediğimiz BSSID listesindeki(input.csv) ağlardan handshake yakalar.
+  * Yakalanan handshakelere, belirlediğimiz wordlistler kullanılarak brute-force saldırı gerçekleştirir
+  * Parolalar txt'ye yazdırır
+  * Monitor modudurdurur.
 
 
   
