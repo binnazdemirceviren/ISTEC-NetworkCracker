@@ -17,7 +17,7 @@
 
 ## Nasıl Çalışır?
 
-     sudo python3 networkcracker.py
+     sudo python3 WirelessCracker.py
 
   
   
