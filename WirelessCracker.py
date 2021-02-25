@@ -91,7 +91,7 @@ class networkCracker:
 
 
 				path = scan+"-0"+str(i)+".cap"
-				orders = ("aircrack-ng {} -w {} 2>&1 | tee passwords{}.txt").format(path,self.wordlist,i)
+				orders = ("aircrack-ng {} -0 -l {}.txt -w {} ").format(path,item,self.wordlist)
 				genyy = os.system(orders)
 				i+=1
 		self.writeNetworkID(networksCHs);
