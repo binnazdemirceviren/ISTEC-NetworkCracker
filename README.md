@@ -14,10 +14,12 @@
   * Yakalanan handshakelere, belirlediğimiz wordlistler kullanılarak brute-force saldırı gerçekleştirir
   * Parolalar txt'ye yazdırır
   * Monitor modu durdurur.
-
+  * 
 ## Nasıl Çalışır?
 
-     sudo python3 WirelessCracker.py
+      git clone https://github.com/binnazdemirceviren/ISTEC-WirelessCracker.git
+      cd ISTEC-WirelessCracker
+      sudo python3 networkCracker.py
 
   
   
