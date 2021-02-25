@@ -19,7 +19,7 @@
 
       git clone https://github.com/binnazdemirceviren/ISTEC-WirelessCracker.git
       cd ISTEC-WirelessCracker
-      sudo python3 networkCracker.py
+      sudo python3 WirelessCracker.py
 
   
   
