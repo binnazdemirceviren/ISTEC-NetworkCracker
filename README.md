@@ -14,7 +14,8 @@
   * Yakalanan handshakelere, belirlediğimiz wordlistler kullanılarak brute-force saldırı gerçekleştirir
   * Parolalar txt'ye yazdırır
   * Monitor modu durdurur.
-  * 
+  
+  
 ## Nasıl Çalışır?
 
       git clone https://github.com/binnazdemirceviren/ISTEC-WirelessCracker.git
